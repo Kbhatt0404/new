@@ -1,0 +1,43 @@
+------------------------------------------------------------------------------------------
+
+INPUT
+curl -d @NAME.json -H "Content-Type: application/json" -X POST http://localhost:8080/change
+OUTPUT
+[{"workFlow":"PAM","processId":"CredChangeName.CredChangeNameFlow","otpNeed":"YES"}]
+
+------------------------------------------------------------------------------------------
+
+INPUT
+curl -d @DOB.json -H "Content-Type: application/json" -X POST http://localhost:8080/change
+OUTPUT
+[{"workFlow":"PAM","processId":"CredDobChange","otpNeed":"YES"}]
+
+------------------------------------------------------------------------------------------
+
+INPUT
+curl -d @MOBILE.json -H "Content-Type: application/json" -X POST http://localhost:8080/change
+OUTPUT
+[{"workFlow":"PAM","processId":"CredDobChange","otpNeed":"YES"}]
+
+------------------------------------------------------------------------------------------
+
+INPUT
+curl -d @ADDRESS.json -H "Content-Type: application/json" -X POST http://localhost:8080/change
+OUTPUT
+[{"workFlow":"PAM","processId":"CredDobChange","otpNeed":"YES"}]
+
+------------------------------------------------------------------------------------------
+
+INPUT
+curl -d @EMPTY.json -H "Content-Type: application/json" -X POST http://localhost:8080/change
+OUTPUT
+[{"workFlow":"PAM","processId":"CredDobChange","otpNeed":"YES"}]
+
+------------------------------------------------------------------------------------------
+
+INPUT
+curl -d @WRONG.json -H "Content-Type: application/json" -X POST http://localhost:8080/change
+OUTPUT
+[{"workFlow":"PAM","processId":"CredDobChange","otpNeed":"YES"}]
+
+------------------------------------------------------------------------------------------
