@@ -1,42 +1,27 @@
 package com.smacredchange;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class ChangeResponse {
+import io.quarkus.runtime.annotations.RegisterForReflection;
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
+@RegisterForReflection
+public class ChangeResponse implements Serializable{
 
-    private List<Integer> RequestIdList;
-    private String ReasonDescription;
-    private List<Integer> DocIdList;
+    private List<Integer> requestIdList;
+    private String changeType;
+    private List<ReasonResponse> reasonResponses= new ArrayList<>();
+    private List<DocResponse> docResponses=new ArrayList<>();
 
-    public ChangeResponse(List<Integer> requestIdList,  String reasonDescription) {
-        RequestIdList = requestIdList;
+    public void addReasonResponses(ReasonResponse response){
+        this.reasonResponses.add(response);
     }
 
-    public List<Integer> getDocIdList() {
-        return DocIdList;
+    public void addDocResponses(DocResponse response){
+        this.docResponses.add(response);
     }
-
-    public void setDocIdList(List<Integer> docIdList) {
-        this.DocIdList = docIdList;
-    }
-
-    public String getReasonDescription() {
-        return ReasonDescription;
-    }
-
-    public void setReasonDescription(String reasonDescription) {
-        this.ReasonDescription = reasonDescription;
-    }
-
-    public ChangeResponse() {
-    }
-
-    public List<Integer> getRequestIdList() {
-        return RequestIdList;
-    }
-
-    public void setRequestIdList(List<Integer> requestIdList) {
-        this.RequestIdList = requestIdList;
-    }
-
 }

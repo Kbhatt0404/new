@@ -1,6 +1,7 @@
 {
-  "changeRequest": 
+  "changerequests": [
      {
       "changeType": "MOBILE"
     }
+    ]
 }

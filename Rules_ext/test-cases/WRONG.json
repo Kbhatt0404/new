@@ -1,7 +1,8 @@
 {
-  "changeRequest": 
+  "changerequests": [
      {
       "changeType": "WR-NG"
     }
+    ]
 }
 

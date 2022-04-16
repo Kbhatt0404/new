@@ -1,6 +1,8 @@
 {
-  "changeRequest": 
-     {
+  "changerequests": [
+    {
       "changeType": "ADDRESS"
+      
     }
+  ]
 }

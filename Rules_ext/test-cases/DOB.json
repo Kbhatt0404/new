@@ -1,3 +1,8 @@
-{ "changerequest":
-   { "changeType": "DOB" }
+{
+  "changerequests": [
+    {
+      "changeType": "DOB"
+      
+    }
+  ]
 }

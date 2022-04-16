@@ -1,31 +1,26 @@
 package com.smacredchange;
-
+import org.kie.kogito.rules.DataStore;
 import org.kie.kogito.rules.DataSource;
 import org.kie.kogito.rules.RuleUnitData;
-import org.kie.kogito.rules.SingletonStore;
-
+import io.quarkus.runtime.annotations.RegisterForReflection;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@Getter
+@Setter
+@RegisterForReflection
+@AllArgsConstructor
 public class ChangeUnit implements RuleUnitData {
 
-    private SingletonStore<ChangeRequest> changerequest = DataSource.createSingleton();
-    private SingletonStore<ChangeResponse> ChangeResponse= DataSource.createSingleton();
-    
+    private DataStore<ChangeRequest> changerequests;
+    private DataStore<ChangeResponse> changeresponses;
 
-
-    public SingletonStore<ChangeRequest> getChangerequest() {
-        return changerequest;
+    public ChangeUnit() {
+        this(DataSource.createStore(), DataSource.createStore());
+        ChangeRequest request=new ChangeRequest();
+        changerequests.add(request);
+        ChangeResponse response=new ChangeResponse();
+        changeresponses.add(response);
     }
-
-    public void setChangeRequest(SingletonStore<ChangeRequest> changerequest) {
-        this.changerequest = changerequest;
-    }
-
-    public SingletonStore<ChangeResponse> getChangeResponse() {
-        return ChangeResponse;
-    }
-
-    public void setChangeResponse(SingletonStore<ChangeResponse> changeResponse) {
-        ChangeResponse = changeResponse;
-    }
-
-    
 }
