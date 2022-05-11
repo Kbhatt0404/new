@@ -10,5 +10,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain 
   nfs: 
     path: /var/lib/mysql/data
-    server: 10.217.5.138
+    server: 10.217.5.194
     readOnly: false
